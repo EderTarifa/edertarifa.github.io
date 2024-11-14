@@ -1,0 +1,293 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box; /* Esto afecta a todos los elementos, asegurando que el padding no afecte al tamaño */
+}
+
+html {
+    scroll-padding-top: 80px; /* Ajusta el valor según la altura de tu barra de navegación */
+}
+
+/* Body Style */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;  /* Elimina márgenes en el body */
+    padding: 0; /* Asegura que no haya padding adicional */
+}
+
+/* Tipografía para títulos */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #333; /* Asegura contraste con el fondo */
+}
+
+.container {
+    max-width: 1000px;   /* Ancho máximo, ajustable */
+    margin: 0 auto;      /* Centrado */
+    padding: 0 40px;     /* Márgenes laterales de 20px */
+}
+
+
+/* Header */
+header {
+    background-color: #f4f4f4;
+    color: #3e2626;
+    padding: 90px 0 0 0;  /* Reducir el padding superior */
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Estilo para la barra de navegación */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;           /* La barra ocupa todo el ancho de la página */
+    background-color: #333;
+    z-index: 1000;
+    padding-left: 40px;    /* Si es necesario, agrega espacio a la izquierda */
+    padding-right: 40px;   /* Si es necesario, agrega espacio a la derecha */
+}
+
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;     /* Centra los elementos de la lista */
+}
+
+.navbar ul li {
+    display: inline-block;  /* Pone los elementos en línea */
+    margin-right: 20px;     /* Espacio entre los enlaces */
+}
+
+.navbar ul li a {
+    color: white;           /* Color del texto */
+    text-decoration: none;  /* Quita el subrayado */
+    font-size: 18px;        /* Tamaño de fuente */
+    padding: 10px 20px;     /* Espaciado alrededor del texto */
+    display: inline-block;  /* Hace que los enlaces sean clicables */
+}
+
+.navbar ul li a:hover {
+    background-color: #575757; /* Cambia el color cuando se pasa el ratón por encima */
+    border-radius: 5px;         /* Bordes redondeados */
+}
+
+/* Estilo del botón de menú hamburguesa */
+.menu-toggle {
+    display: none; /* Solo se muestra en dispositivos pequeños */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    border-radius: 2px;
+}
+
+/* Estilos de navegación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Oculta el menú inicialmente en pantallas pequeñas */
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Ajusta según la altura de tu barra de navegación */
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: flex; /* Muestra el botón hamburguesa */
+    }
+
+    .navbar ul.show-menu {
+        display: flex; /* Muestra el menú cuando se hace clic en el botón hamburguesa */
+    }
+}
+
+
+/* Estilo para las secciones para que no queden debajo de la barra de navegación */
+section {
+    padding-top: 120px;  /* Mantén el espacio superior */
+    padding-left: 80px;  /* Agrega espacio a la izquierda */
+    padding-right: 80px; /* Agrega espacio a la derecha */
+}
+
+
+#about, #skills, #projects {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 100px;  /* Aumenta los márgenes laterales */
+    padding: 20px;
+}
+
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills li {
+    background-color: #e8e8e8;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+}
+
+/* Projects */
+
+/* Estilo general para los proyectos */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;              /* Permite que los proyectos se ajusten cuando no haya espacio */
+    justify-content: space-evenly; /* Espacia uniformemente los proyectos */
+    gap: 20px;                    /* Espacio entre los proyectos */
+    margin: 20px auto;            /* Márgenes automáticos para centrar el contenedor */
+}
+
+/* Estilo para cada proyecto */
+.project {
+    width: calc(33.33% - 20px);   /* Cada proyecto ocupa un 33.33% del contenedor, ajustado por el espacio entre ellos */
+    text-align: center;           /* Centra el texto dentro de cada proyecto */
+    box-sizing: border-box;       /* Asegura que el padding y border no afecten al tamaño del proyecto */
+}
+
+/* Estilo para las imágenes de los proyectos */
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project img:hover {
+    transform: translateY(-10px);  /* Desplaza la imagen hacia arriba */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Asegura que en pantallas pequeñas se muestren solo 1 o 2 columnas */
+@media screen and (max-width: 768px) {
+    .project {
+        width: 50%;  /* Dos proyectos por fila */
+        margin-bottom: 20px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .project {
+        width: 100%;               /* Un proyecto por fila en pantallas pequeñas */
+    }
+}
+
+/* Skills Section */
+#skills {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#skills h2 {
+    margin-bottom: 20px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill {
+    text-align: center;
+}
+
+/* Contenedor principal de skills */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Estilo de los íconos */
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+}
+
+
+.skill p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.skill a {
+    display: inline-block;  /* Hace que el enlace envuelva correctamente la imagen */
+    transition: transform 0.3s ease-in-out;  /* Agrega una transición suave */
+}
+
+.skill a:hover {
+    transform: scale(1.05);  /* Aumenta ligeramente el tamaño de la imagen cuando se pasa el ratón */
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#contact {
+    background-color: #f9f9f9;
+    padding: 0px 50px 50px 50px;  /* Aumenta el padding inferior */
+    margin-bottom: 0px;             /* Añade un margen inferior para separarlo de otros elementos */
+}
